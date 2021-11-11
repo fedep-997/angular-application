@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    background-color: #333;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+div, a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    font-size: 2vw;
+    width: 100%;
+}
+
+#testa {
+    font-size: 15vw;
+}
+
+input[type=text], input[type=email], input[type=password], textarea, button {
+    font-size: 3em;
+    display: block;
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    border-bottom: 3px solid #fff;
+    margin: 3vw
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+}
+
+form > div {
+    display: flex;
+    margin-top: 3em;
+}
+
+.form-control {
+    background-color: #333
+}

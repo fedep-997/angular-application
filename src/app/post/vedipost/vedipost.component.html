@@ -1,0 +1,33 @@
+<header>
+    <title>{{titolopagina}}</title>
+</header>
+
+<div id="post">
+
+    <div id="posttesta">
+        <ngx-avatar [name]="ilpost.user" size="50"></ngx-avatar>
+        <span id="title">{{ilpost.titolo}}</span>
+        <p>{{ilpost.testo}}</p>
+    </div>
+
+
+    <div id="commentario">
+        <div id="commento">
+
+            <div *ngFor="let comm of commenti">
+                <div id="il-commento" *ngIf="comm.post == numeropost">
+                    <ngx-avatar [name]="mail" src="assets/avatar.jpg" size="25">
+                    </ngx-avatar>
+                    <div id="testocommento">{{comm.testo}}</div>
+                </div>
+            </div>
+        </div>
+        <!--<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="commenti.length"></ngb-pagination>-->
+    </div>
+
+        <span>Commenta questo post!</span>
+        <form #commenta="ngForm" (ngSubmit)="commentare(commenta)">
+                <input ngModel #txt_commento="ngModel" name="txt_commento" type="text" required>
+            <button type="submit">Invio</button>
+        </form>
+</div>

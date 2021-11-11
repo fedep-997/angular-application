@@ -1,0 +1,13 @@
+<div id="testa">{{titolopagina}}</div>
+
+<form #pubblica="ngForm" (ngSubmit)="pubblicazione(pubblica)">
+        <div class="form-group">
+            <input name="titolopost" #titolopost="ngModel" class="form-control" type="text" placeholder="titolo" ngModel>
+        </div>
+
+        <div class="form-group">
+            <textarea name="testo" #testo="ngModel" class="form-control" placeholder="post" ngModel></textarea>
+        </div>
+    
+        <button type="submit">Pubblica</button>
+</form>

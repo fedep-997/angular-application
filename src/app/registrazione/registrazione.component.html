@@ -1,0 +1,35 @@
+<div id="testa">{{titolopagina}}</div>
+
+
+<div id="registr">
+
+    <div id="formaccesso">
+        <form #registrazione="ngForm" (ngSubmit)="validazione(registrazione)">
+            <div class="form-group">
+                <input #usr="ngModel" required minlength="4" class="form-control" type="text"
+                    placeholder="come ti chiamerai?" name="username" ngModel>
+                <div *ngIf="usr.touched && usr.invalid" class="compilazione_errata">Almeno 4 caratteri nel tuo nome
+                    per favore!</div>
+            </div>
+
+            <div class="form-group">
+                <input #mail="ngModel" class="form-control" type="email" placeholder="la tua mail" name="email" ngModel>
+            </div>
+
+            <div class="form-group">
+                <input #name_1="ngModel" required minlength="4" class="form-control" type="text"
+                    placeholder="la password" name="password" ngModel>
+                <div *ngIf="name_1.touched && name_1.invalid" class="compilazione_errata">Almeno 4 caratteri per la
+                    password!</div>
+            </div>
+            
+            <div>
+                <input #name_2="ngModel" required class="form-control" type="text" placeholder="ripeti la password"
+                    name="password_2" ngModel>
+                <div *ngIf="name_1.value != name_2.value" class="compilazione_errata">Le password non coincidono!</div>
+            </div>
+            <button type="submit">Registrati!</button>
+        </form>
+    </div>
+
+</div>

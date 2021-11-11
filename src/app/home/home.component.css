@@ -1,0 +1,12 @@
+#testa {padding-bottom: .4em;}
+
+#testa div {flex: 1; text-align: center}
+
+#navigatore-superiore {display: flex}
+#navigatore-superiore * {text-align: center;margin: auto}
+
+#posteggio div {flex:1}
+#riga_post {margin:auto; width: 80%;display:flex; margin: 2em; text-align: center}
+#riga_post div {flex:1}
+
+.pg, .av {margin: auto}
