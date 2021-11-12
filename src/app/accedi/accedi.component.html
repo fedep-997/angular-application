@@ -13,9 +13,9 @@
                 placeholder="***" ngModel>
         </div>
         <div *ngIf="password.touched && password.errors?.required">Inserisci la password!</div>        
-        <div>
-            <button type="submit">Accedi</button>
-            <span>
+        <div style="display: flex;">
+            <button type="submit" style="flex:1">Accedi</button>
+            <span style="flex:1">
                 <span><p>Ricorda questo accesso</p><input name="check" #check="ngModel" type="checkbox" ngModel></span>
                 <span>Non sei iscritto? <a routerLink="/registrazione">Registrati</a></span>
             </span>
