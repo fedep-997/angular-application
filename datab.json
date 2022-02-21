@@ -3,13 +3,13 @@
     {
       "id": "Carlone",
       "email": "carl@abc.def",
-      "password": "ababa1",
+      "password": "Password1",
       "ricordami": "no"
     },
     {
       "id": "Arianna",
       "email": "ari@abc.def",
-      "password": "ababa2",
+      "password": "Password2",
       "ricordami": "no"
     }
   ],
