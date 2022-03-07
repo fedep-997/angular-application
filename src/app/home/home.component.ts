@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServizioService } from '../servizi/servizio.service';
 import { Un_post_tipo } from '../banca_interna/interfacciapost/Unpostfattocome';
@@ -30,16 +30,6 @@ export class HomeComponent implements OnInit {
     this.servizi.acquisizione_post().subscribe(c => this.pubblicazioni = c);
   }
 
-  leggi(numerodilettura: number) {
-    // selettore del post da aprire
-    var leggiObj = {
-      n: numerodilettura,
-    }
-    this.servizi.cambiaNumero(numerodilettura)
-    sessionStorage.setItem('postinlettura', JSON.stringify(leggiObj))
-    console.log(leggiObj)
-    this.rotta.navigateByUrl('/post')
-  }
 
   esci() {
     // logica di logout

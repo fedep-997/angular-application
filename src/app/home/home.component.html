@@ -2,26 +2,27 @@
 
 <div id="navigatore-superiore">
     <div><a (click)="esci()">Logout</a></div>
-    <div>Welcome,{{accesso}}</div>
-    <div><ngx-avatar [name]="accesso" src="assets/avatar.jpg" size="50"></ngx-avatar></div>
+    <div>Welcome, {{accesso}}</div>
+    <div>
+        <ngx-avatar [name]="accesso" size="50"></ngx-avatar>
+    </div>
     <div><a routerLink="/nuovopost">Nuovo Post</a></div>
 </div>
 
-<div *ngFor="let pubb of pubblicazioni; let indice = index" [attr.data-index]="indice">
+<div *ngFor="let pubb of pubblicazioni; let indice = index" [attr.data-index]="indice" [routerLink]="['/post', pubb.id]">
     <div id="riga_post">
-        <div class="av">
-            <ngx-avatar [name]="pubb.user" src="assets/avatar.jpg" size="50"></ngx-avatar>
-        </div>
         <div>
             <!--indice+1 allinea questo ciclo for con il valore del postid nel "backend"-->
-            <b><a (click)="leggi(indice+1)">{{pubb.titolo}} </a></b>
+            <div class="titoletto">
+                <ngx-avatar [name]="pubb.user" size="100"></ngx-avatar>
+                <p>{{pubb.titolo}}</p>
+            </div>
             <br>
             {{pubb.testo}}
         </div>
     </div>
 </div>
 
-<!--
+
 <ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="pubblicazioni.length">
 </ngb-pagination>
--->

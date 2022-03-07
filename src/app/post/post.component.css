@@ -1,0 +1,5 @@
+#post {padding: 3em}
+#posttesta {margin-top:3em}
+#posttesta > div {font-size: 4em}
+#posttesta, #commentitolo {display: flex;}
+#commentitolo > div {padding-left:2em}

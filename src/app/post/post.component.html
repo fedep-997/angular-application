@@ -1,1 +1,26 @@
-<app-vedipost [numeropost]="risultato"></app-vedipost>
+<div id="posttesta">
+    <ngx-avatar [name]="ilpost.user" size="50"></ngx-avatar>
+    <div>{{ilpost.titolo}}</div>
+</div>
+
+<div id="post">
+    <p>{{ilpost.testo}}</p>
+
+    <div id="commentario">
+
+        <div *ngFor="let comm of commenti">
+            <div id="commentitolo" *ngIf="comm.post == numeropost">
+                <ngx-avatar [name]="mail" size="25"></ngx-avatar>
+                <div id="testocommento">{{comm.testo}}</div>
+            </div>
+        </div>
+        <!--<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="commenti.length"></ngb-pagination>-->
+
+
+        <span>Commenta questo post!</span>
+        <form #commento="ngForm" (ngSubmit)="commentare(commento)">
+            <input ngModel #txt_commento="ngModel" name="txt_commento" type="text" required>
+            <button type="submit">Invio</button>
+        </form>
+    </div>
+</div>
