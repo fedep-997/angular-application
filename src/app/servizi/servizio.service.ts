@@ -18,10 +18,6 @@ export class ServizioService {
   private stato = this.checkStato()
   statodiaccesso = this.stato.asObservable()
 
-  // Questi dati sono condivisi tra i componenti
-  private numerodaScambiare = new BehaviorSubject(0);
-  numerocorrente = this.numerodaScambiare.asObservable();
-
   private usernameLoggato = new BehaviorSubject('');
   usernameCorrente = this.usernameLoggato.asObservable();
 
