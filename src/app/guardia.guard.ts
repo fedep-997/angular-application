@@ -8,9 +8,7 @@ import { ServizioService } from './servizi/servizio.service';
 export class GuardiaGuard implements CanActivate {
   statoAcc: any;
   constructor(private servizi: ServizioService) { }
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
+  canActivate(): boolean {
     this.servizi.statodiaccesso.subscribe(c => this.statoAcc = c)
     console.log(this.statoAcc)
     return this.statoAcc

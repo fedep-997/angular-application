@@ -36,9 +36,8 @@ import { NonTrovatoComponent } from './non-trovato/non-trovato.component';
       {path: 'home', component: HomeComponent, canActivate: [GuardiaGuard]},
       {path: 'registrazione', component: RegistrazioneComponent},
       {path: 'accedi', component: AccediComponent},
-      {path: 'post', component: PostComponent, canActivate: [GuardiaGuard]},
-      {path: 'post/:id', component: PostComponent, canActivate: [GuardiaGuard]},
-      {path: 'nuovopost', component: NuovopostComponent, canActivate: [GuardiaGuard]},
+      {path: 'post/:id', component: PostComponent},
+      {path: 'nuovopost', component: NuovopostComponent},
       {path: '',   redirectTo: '/accedi', pathMatch: 'full'},
       {path: '**', component: NonTrovatoComponent }
     ], {onSameUrlNavigation: 'reload'}),

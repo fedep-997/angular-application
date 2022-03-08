@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServizioService } from '../servizi/servizio.service';
 import { Utente_tipo } from '../banca_interna/struttura_utente/Utente';

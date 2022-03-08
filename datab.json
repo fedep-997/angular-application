@@ -1,7 +1,7 @@
 {
   "utenti": [
     {
-      "id": "Carlone",
+      "id": "Carlo",
       "email": "carl@abc.def",
       "password": "Password1",
       "ricordami": "no"
@@ -15,19 +15,19 @@
   ],
   "pubblicazioni": [
     {
-      "user": "Carlone",
+      "user": "Carlo",
       "titolo": "Gita al parco",
       "testo": "as been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like",
       "id": 1
     },
     {
-      "user": "Carlone",
+      "user": "Carlo",
       "titolo": "Concerto di Biagio",
       "testo": "m Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model te",
       "id": 2
     },
     {
-      "user": "Carlone",
+      "user": "Carlo",
       "titolo": "In Biblioteca",
       "testo": "andard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from  by Cicero are also reproduced in their exact original form, accompanied by English versions fro",
       "id": 3

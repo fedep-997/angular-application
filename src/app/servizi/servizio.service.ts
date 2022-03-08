@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
-// Interfacce
+
 import { Utente_tipo } from '../banca_interna/struttura_utente/Utente';
 import { Un_post_tipo } from '../banca_interna/interfacciapost/Unpostfattocome';
 import { Commento } from '../banca_interna/interfacciacommento/un_commento';
@@ -64,13 +64,6 @@ export class ServizioService {
     return this.clienteHTTP.post<Utente_tipo>(this.dati + '/utenti', { "id": e, "email": f, "password": g }, { 'headers': testa })
   }
 
-
-  // altri metodi (metodi non HTTP)
-  // passaggio parametro di lettura del post
-  cambiaNumero(nu: number) {
-    this.numerodaScambiare.next(nu)
-  }
-
   accessoDimentica(usr: string, mail: string, rott: string) {
     this.usernameLoggato.next(usr);
     sessionStorage.setItem('utente', usr);
@@ -89,10 +82,8 @@ export class ServizioService {
   impostaGuardia(st: boolean) {
     this.stato.next(st)
   }
-  // Piccolo espediente per controllare la guardia.
-  // Non sono riuscito a fare di meglio poiché dichiarare un valore "false" indipendentemente
-  // dal contesto attiva la guardia ogni volta che una pagina viene ricaricata, impendendone la
-  // visone anche se è stato effettuato l'accesso
+
+  //Schifo cambiare
   checkStato(){
     if ((sessionStorage.length == 0) && (localStorage.length == 0)) {
       var stato = new BehaviorSubject(false)

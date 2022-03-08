@@ -16,7 +16,6 @@
         </div>
         <!--<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="commenti.length"></ngb-pagination>-->
 
-
         <span>Commenta questo post!</span>
         <form #commento="ngForm" (ngSubmit)="commentare(commento)">
             <input ngModel #txt_commento="ngModel" name="txt_commento" type="text" required>
