@@ -1,18 +1,18 @@
-<div id="testa">{{titolopagina}}</div>
+<div id="testa">
+    <p>{{titolopagina}}</p>
+    <div><a routerLink="/profilo"><ngx-avatar [name]="accesso" size="100"></ngx-avatar></a></div>
+</div>
 
 <div id="navigatore-superiore">
     <div><a (click)="esci()">Logout</a></div>
     <div>Welcome, {{accesso}}</div>
-    <div>
-        <ngx-avatar [name]="accesso" size="50"></ngx-avatar>
-    </div>
     <div><a routerLink="/nuovopost">Nuovo Post</a></div>
 </div>
 
+<!--Feed-->
 <div *ngFor="let pubb of pubblicazioni; let indice = index" [attr.data-index]="indice">
     <div id="riga_post">
         <div>
-            <!--indice+1 allinea questo ciclo for con il valore del postid nel "backend"-->
             <div class="titoletto" [routerLink]="['/post', pubb.id]">
                 <ngx-avatar [name]="pubb.user" size="100"></ngx-avatar>
                 <p>{{pubb.titolo}}</p>
@@ -23,6 +23,6 @@
     </div>
 </div>
 
-
+<!--Paginazione feed-->
 <ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="pubblicazioni.length">
 </ngb-pagination>

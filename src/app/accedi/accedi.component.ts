@@ -7,22 +7,20 @@ import { Utente_tipo } from '../banca_interna/struttura_utente/Utente';
   selector: 'app-accedi',
   templateUrl: './accedi.component.html',
   styleUrls: ['./accedi.component.css'],
-
 })
 export class AccediComponent implements OnInit {
   titolopagina: string = "PICCOLO SOCIAL NETWORK";
   
-  vabene: boolean = false;
-  utenti: Utente_tipo[] = [];
-
   accesso: string = ''
   mail: string = ''
+  utenti: Utente_tipo[] = [];
+  
+  vabene: boolean = false;
 
   constructor(private servizi: ServizioService) { }
 
   ngOnInit(): void {
-    // la lista degli utenti viene confrontata con le informazioni in ingresso
-    this.servizi.acquisizione_utenti().subscribe((c) => (this.utenti = c));
+    this.servizi.get_utenti().subscribe(c => (this.utenti = c));
   }
 
   accedi(a: NgForm): void {
@@ -39,7 +37,6 @@ export class AccediComponent implements OnInit {
       }
     }
     if (this.vabene) {
-      // operazioni di accesso
       this.servizi.impostaGuardia(true)
       // in base al valore di "Ricorda Questo Accesso", i dati sono memorizzati in localStorage o in sessionStorage
       if (acc.check) {

@@ -9,9 +9,11 @@ import { Router } from '@angular/router';
   templateUrl: './nuovopost.component.html',
   styleUrls: ['./nuovopost.component.css']
 })
+
 export class NuovopostComponent implements OnInit {
 
-  titolopagina: string = "NUOVO POST";
+  titolopagina: string = "nuovo post";
+  accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
 
   pubblicazioni: Un_post_tipo[] = [];
   acc = sessionStorage.getItem('utente') || localStorage.getItem('utente') || '';
@@ -23,7 +25,7 @@ export class NuovopostComponent implements OnInit {
 
   pubblicazione(b: NgForm): void {
     this.servizi.postaUnPost(this.acc, b.form.value.titolopost, b.form.value.testo).subscribe(data => {})
-    this.servizi.acquisizione_post().subscribe((a) => (this.pubblicazioni = a))
+    this.servizi.leggi_post().subscribe(a => (this.pubblicazioni = a))
     this.rotta.navigateByUrl('/home')
   }
 }

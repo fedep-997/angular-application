@@ -1,5 +1,7 @@
-<div id="testa">{{titolopagina}}</div>
-
+<div id="testa">
+    <p>{{titolopagina}}</p>
+    <div><a routerLink="/profilo"><ngx-avatar [name]="accesso" size="100"></ngx-avatar></a></div>
+</div>
 <form #pubblica="ngForm" (ngSubmit)="pubblicazione(pubblica)">
         <div class="form-group">
             <input name="titolopost" #titolopost="ngModel" class="form-control" type="text" placeholder="titolo" ngModel>
@@ -11,3 +13,5 @@
     
         <button type="submit">Pubblica</button>
 </form>
+
+<div id="ndreo" routerLink="/home">←</div>

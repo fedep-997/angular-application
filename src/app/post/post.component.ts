@@ -17,7 +17,8 @@ export class PostComponent implements OnInit {
 
   page = 1;
   pageSize = 10;
-
+  
+  accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
   mail = sessionStorage.getItem('mail') || localStorage.getItem('utente') || '';
 
   @Input() numeropost!: number;
@@ -30,7 +31,7 @@ export class PostComponent implements OnInit {
     this.servizi
       .un_solo_post(this.numeropost)
       .subscribe((c) => (this.ilpost = c));
-    this.servizi.acquisizione_commenti().subscribe((d) => (this.commenti = d));
+    this.servizi.get_commenti().subscribe((d) => (this.commenti = d));
   }
   commentare(a: NgForm): void {
     // fai un commento e rifetcha lista commenti aggiornata
@@ -40,8 +41,8 @@ export class PostComponent implements OnInit {
         this.mail,
         a.form.value.txt_commento
       )
-      .subscribe((data) => {});
-    this.servizi.acquisizione_commenti().subscribe((d) => (this.commenti = d));
+      .subscribe(() => {});
+    this.servizi.get_commenti().subscribe((d) => (this.commenti = d));
     window.location.reload();
   }
 }

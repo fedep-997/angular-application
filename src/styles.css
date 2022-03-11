@@ -13,12 +13,12 @@ div, a {
     width: 100%;
 }
 
-#testa {
-    font-size: 10vw;
-}
+#testa {font-size: 7vw;display:flex;padding-bottom: .4em; justify-content: center; align-items: center;}
+#testa p {flex:4}
+#testa div {flex:1}
 
 input[type=text], input[type=email], input[type=password], textarea, button {
-    font-size: 3em;
+    font-size: 2em;
     display: block;
     background-color: #333;
     color: #fff;

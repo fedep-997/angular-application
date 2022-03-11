@@ -18,8 +18,7 @@ export class RegistrazioneComponent implements OnInit {
   constructor(private servizi: ServizioService) {}
 
   ngOnInit(): void {
-    // controlla gli utenti che esistono già
-    this.servizi.acquisizione_utenti().subscribe((c) => (this.utenti = c))
+    this.servizi.get_utenti().subscribe(c => (this.utenti = c))
 }
 
   // Validazione form (?)

@@ -1,13 +1,12 @@
-<div id="posttesta">
-    <ngx-avatar [name]="ilpost.user" size="50"></ngx-avatar>
-    <div>{{ilpost.titolo}}</div>
+<div id="testa">
+    <p>{{ilpost.titolo}}</p>
+    <div><a routerLink="/profilo"><ngx-avatar [name]="ilpost.user" size="100"></ngx-avatar></a></div>
 </div>
 
 <div id="post">
     <p>{{ilpost.testo}}</p>
 
     <div id="commentario">
-
         <div *ngFor="let comm of commenti">
             <div id="commentitolo" *ngIf="comm.post == numeropost">
                 <ngx-avatar [name]="mail" size="25"></ngx-avatar>
@@ -19,7 +18,7 @@
         <span>Commenta questo post!</span>
         <form #commento="ngForm" (ngSubmit)="commentare(commento)">
             <input ngModel #txt_commento="ngModel" name="txt_commento" type="text" required>
-            <button type="submit">Invio</button>
+            <button type="submit">Commenta</button>
         </form>
     </div>
 </div>

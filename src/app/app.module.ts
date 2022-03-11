@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { GuardiaGuard } from './guardia.guard';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AvatarModule } from 'ngx-avatar';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrazioneComponent } from './registrazione/registrazione.component';
 import { AccediComponent } from './accedi/accedi.component';
 import { PostComponent } from './post/post.component';
 import { NuovopostComponent } from './nuovopost/nuovopost.component';
+import { ProfiloComponent } from './profilo/profilo.component';
 import { NonTrovatoComponent } from './non-trovato/non-trovato.component';
 
+import { GuardiaGuard } from './guardia.guard';
 
 @NgModule({
   declarations: [
@@ -26,24 +29,45 @@ import { NonTrovatoComponent } from './non-trovato/non-trovato.component';
     NuovopostComponent,
     RegistrazioneComponent,
     NonTrovatoComponent,
+    ProfiloComponent,
   ],
   imports: [
+    RouterModule.forRoot([
+      { path: 'home', 
+        component: HomeComponent, 
+        canActivate: [GuardiaGuard],
+      },
+      { path: 'registrazione', 
+        component: RegistrazioneComponent,
+      },
+      { path: 'accedi', 
+        component: AccediComponent,
+      },
+      { path: 'profilo',
+        component: ProfiloComponent,
+      },
+      { path: 'post/:id', 
+        component: PostComponent,
+      },
+      { path: 'nuovopost', 
+        component: NuovopostComponent,
+      },
+      { path: '', 
+        redirectTo: '/accedi', 
+        pathMatch: 'full'
+      },
+      { path: '**', 
+        component: NonTrovatoComponent,
+      }
+    ], {onSameUrlNavigation: 'reload'}),
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      {path: 'home', component: HomeComponent, canActivate: [GuardiaGuard]},
-      {path: 'registrazione', component: RegistrazioneComponent},
-      {path: 'accedi', component: AccediComponent},
-      {path: 'post/:id', component: PostComponent},
-      {path: 'nuovopost', component: NuovopostComponent},
-      {path: '',   redirectTo: '/accedi', pathMatch: 'full'},
-      {path: '**', component: NonTrovatoComponent }
-    ], {onSameUrlNavigation: 'reload'}),
     NgbModule,
     AvatarModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
