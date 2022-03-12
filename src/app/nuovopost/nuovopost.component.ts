@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Un_post_tipo } from '../banca_interna/interfacciapost/Unpostfattocome';
+import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
 import { ServizioService } from '../servizi/servizio.service';
 import { Router } from '@angular/router';
 

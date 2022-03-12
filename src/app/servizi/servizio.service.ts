@@ -6,9 +6,9 @@ import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 
-import { Utente_tipo } from '../banca_interna/struttura_utente/Utente';
-import { Un_post_tipo } from '../banca_interna/interfacciapost/Unpostfattocome';
-import { Commento } from '../banca_interna/interfacciacommento/un_commento';
+import { Utente_tipo } from '../interfacce/struttura_utente/Utente';
+import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
+import { Commento } from '../interfacce/interfacciacommento/un_commento';
 
 
 @Injectable({

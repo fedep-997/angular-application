@@ -1,17 +1,12 @@
-<div id="testa">
-    <p>{{titolopagina}}</p>
-    <div><a routerLink="/profilo"><ngx-avatar [name]="accesso" size="100"></ngx-avatar></a></div>
-</div>
-<form #pubblica="ngForm" (ngSubmit)="pubblicazione(pubblica)">
-        <div class="form-group">
-            <input name="titolopost" #titolopost="ngModel" class="form-control" type="text" placeholder="titolo" ngModel>
-        </div>
+<app-testa header="nuovo post"></app-testa>
 
-        <div class="form-group">
-            <textarea name="testo" #testo="ngModel" class="form-control" placeholder="post" ngModel></textarea>
-        </div>
-    
-        <button type="submit">Pubblica</button>
+<form #pubblica="ngForm" (ngSubmit)="pubblicazione(pubblica)">
+    <div class="form-group">
+        <input name="titolopost" #titolopost="ngModel" type="text" placeholder="titolo" ngModel>
+        <input name="testo" #testo="ngModel" type="text" placeholder="post" ngModel>
+    </div>
+
+    <button type="submit">Pubblica</button>
 </form>
 
 <div id="ndreo" routerLink="/home">←</div>

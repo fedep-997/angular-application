@@ -13,10 +13,6 @@ div, a {
     width: 100%;
 }
 
-#testa {font-size: 7vw;display:flex;padding-bottom: .4em; justify-content: center; align-items: center;}
-#testa p {flex:4}
-#testa div {flex:1}
-
 input[type=text], input[type=email], input[type=password], textarea, button {
     font-size: 2em;
     display: block;
@@ -30,6 +26,8 @@ input[type=text], input[type=email], input[type=password], textarea, button {
 input:focus, textarea:focus {
     outline: 0;
 }
+
+input, textarea {border-radius: 0!important;}
 
 form > div {
     display: flex;

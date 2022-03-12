@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { TestaComponent } from './SharedComponents/testa/testa.component';
 import { RegistrazioneComponent } from './registrazione/registrazione.component';
 import { AccediComponent } from './accedi/accedi.component';
 import { PostComponent } from './post/post.component';
@@ -30,6 +31,7 @@ import { GuardiaGuard } from './guardia.guard';
     RegistrazioneComponent,
     NonTrovatoComponent,
     ProfiloComponent,
+    TestaComponent,
   ],
   imports: [
     RouterModule.forRoot([

@@ -1,0 +1,3 @@
+#testa {font-size: 7vw;display:flex;padding-bottom: .4em; justify-content: center; align-items: center;}
+#testa p {flex:4}
+#testa div {flex:1}

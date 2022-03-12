@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServizioService } from '../servizi/servizio.service';
-import { Un_post_tipo } from '../banca_interna/interfacciapost/Unpostfattocome';
+import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
 
 @Component({
   selector: 'app-home',

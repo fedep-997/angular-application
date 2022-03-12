@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ServizioService } from '../servizi/servizio.service';
-import { Un_post_tipo } from '../banca_interna/interfacciapost/Unpostfattocome';
+import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
 
 @Component({
   selector: 'app-post',

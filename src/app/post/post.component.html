@@ -1,7 +1,4 @@
-<div id="testa">
-    <p>{{ilpost.titolo}}</p>
-    <div><a routerLink="/profilo"><ngx-avatar [name]="ilpost.user" size="100"></ngx-avatar></a></div>
-</div>
+<app-testa [header]="ilpost.titolo"></app-testa>
 
 <div id="post">
     <p>{{ilpost.testo}}</p>
