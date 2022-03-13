@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    background-color: #333;
+    background-color: #46a;
 }
 
 html, body { height: 100%; }
@@ -16,9 +16,10 @@ div, a {
 input[type=text], input[type=email], input[type=password], textarea, button {
     font-size: 2em;
     display: block;
-    background-color: #333;
+    background-color: #222;
     color: #fff;
     border: 0;
+    border-radius: 0;
     border-bottom: 3px solid #fff;
     margin: 3vw
 }
@@ -27,13 +28,7 @@ input:focus, textarea:focus {
     outline: 0;
 }
 
-input, textarea {border-radius: 0!important;}
-
 form > div {
     display: flex;
-    margin-top: 3em;
-}
-
-.form-control {
-    background-color: #333
+    margin-top: 2em;
 }

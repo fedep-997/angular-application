@@ -21,6 +21,6 @@ export class ProfiloComponent implements OnInit {
   pubblicazioni: Un_post_tipo[] = [];
 
   ngOnInit(): void {
-    this.servizi.leggi_post().subscribe((c) => (this.pubblicazioni = c));
+    this.servizi.leggi_post().subscribe((c) => (this.pubblicazioni = c.filter(p => p.user == this.accesso)));
   }
 }

@@ -2,7 +2,6 @@
 
 <div id="navigatore-superiore">
     <div><a (click)="esci()">Logout</a></div>
-    <div>Welcome, {{accesso}}</div>
     <div><a routerLink="/nuovopost">Nuovo Post</a></div>
 </div>
 
@@ -11,11 +10,11 @@
     <div id="riga_post">
         <div>
             <div class="titoletto" [routerLink]="['/post', pb.id]">
-                <ngx-avatar [name]="pb.user"></ngx-avatar>
-                <p>{{pb.titolo}}</p>
+                <span class="t-tit">{{pb.titolo}}</span>
+                <span class="t-aut">{{pb.user}}</span>
             </div>
             <br>
-            {{pb.testo}}
+            <span>{{pb.testo}}</span>
         </div>
     </div>
 </div>

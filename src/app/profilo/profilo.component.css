@@ -1,0 +1,4 @@
+a:hover, .titoletto p:hover {color: #fff;text-decoration: underline!important;}
+#riga_post {width: 80%;display:flex; margin: 4em; padding-bottom: 2em; align-items: center;}
+.titoletto {display: flex;}
+.titoletto p {font-size: 1.5em; margin-left: 1em;}

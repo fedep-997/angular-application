@@ -25,7 +25,7 @@
             <div>
                 <input #name_2="ngModel" required class="form-control" type="text" placeholder="ripeti la password"
                     name="password_2" ngModel>
-                <div *ngIf="name_1.value != name_2.value" class="compilazione_errata">Le password non coincidono!</div>
+                <div *ngIf="name_2.touched && (name_1.value != name_2.value)" class="compilazione_errata">Le password non coincidono!</div>
             </div>
             <button type="submit">Registrati!</button>
         </form>

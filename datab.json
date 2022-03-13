@@ -11,6 +11,11 @@
       "email": "ari@abc.def",
       "password": "Password2",
       "ricordami": "no"
+    },
+    {
+      "id": "Mario",
+      "email": "mario.com",
+      "password": "Mario"
     }
   ],
   "pubblicazioni": [
@@ -35,8 +40,14 @@
     {
       "user": "Arianna",
       "titolo": "Sciare",
-      "testo": "Tuttuturuttututt\n",
+      "testo": "Tuttuturuttututt",
       "id": 4
+    },
+    {
+      "user": "Mario",
+      "titolo": "Scala",
+      "testo": "Scala",
+      "id": 5
     }
   ],
   "commenti": [
