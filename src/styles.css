@@ -32,3 +32,6 @@ form > div {
     display: flex;
     margin-top: 2em;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

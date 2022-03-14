@@ -20,6 +20,7 @@ import { ProfiloComponent } from './profilo/profilo.component';
 import { NonTrovatoComponent } from './non-trovato/non-trovato.component';
 
 import { GuardiaGuard } from './guardia.guard';
+import { FeedComponent } from './SharedComponents/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { GuardiaGuard } from './guardia.guard';
     NonTrovatoComponent,
     ProfiloComponent,
     TestaComponent,
+    FeedComponent,
   ],
   imports: [
     RouterModule.forRoot([

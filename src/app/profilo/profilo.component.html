@@ -1,15 +1,3 @@
 <app-testa header={{accesso}}></app-testa>
 
-<!--Feed-->
-<div *ngFor="let pb of pubblicazioni.slice().reverse(); let indice = index" [attr.data-index]="indice">
-    <div id="riga_post">
-        <div>
-            <div class="titoletto" [routerLink]="['/post', pb.id]">
-                <ngx-avatar [name]="pb.user"></ngx-avatar>
-                <p>{{pb.titolo}}</p>
-            </div>
-            <br>
-            {{pb.testo}}
-        </div>
-    </div>
-</div>
+<app-feed tipo="profilo"></app-feed>

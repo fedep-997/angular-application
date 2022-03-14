@@ -1,10 +1,5 @@
-a:hover,
-.t-tit:hover {
+a:hover {
   color: #fff;
-  text-decoration: underline !important;
-}
-.t-aut:hover {
-  color: #46a;
   text-decoration: underline !important;
 }
 
@@ -16,41 +11,3 @@ a:hover,
   margin: auto;
 }
 
-#posteggio div {
-  flex: 1;
-}
-#riga_post {
-  width: 80%;
-  display: flex;
-  margin: 4em;
-  align-items: center;
-}
-.titoletto {
-  display: flex;
-}
-.titoletto * {
-  font-size: 1.8em;
-}
-.t-tit {
-  flex: 4;
-  background-color: #0007 !important;
-  padding-left: 0.5em;
-}
-.t-aut {
-  flex: 1;
-  background-color: #fff !important;
-  color: #46a;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
-/* DEEP MANIPULATION */
-/*::ng-deep ngx-avatar * {align-content:center!important;}*/
-::ng-deep ngb-pagination * {
-  margin: auto !important;
-}
-::ng-deep ngb-pagination ul > li:not(.active) > a,
-::ng-deep ngb-pagination ul > li.active > a {
-  background-color: transparent !important;
-  border: 0 !important;
-}

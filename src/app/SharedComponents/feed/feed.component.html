@@ -1,0 +1,17 @@
+<!--Feed-->
+<div *ngFor="let pb of pubblicazioni.slice().reverse(); let indice = index" [attr.data-index]="indice">
+    <div id="riga_post">
+        <div>
+            <div class="titoletto" [routerLink]="['/post', pb.id]">
+                <span class="t-tit">{{pb.titolo}}</span>
+                <span class="t-aut">{{pb.user}}</span>
+            </div>
+            <br>
+            <span>{{pb.testo}}</span>
+        </div>
+    </div>
+</div>
+
+<!--Paginazione feed-->
+<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="pubblicazioni.length">
+</ngb-pagination>
