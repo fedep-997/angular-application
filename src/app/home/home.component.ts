@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServizioService } from '../servizi/servizio.service';
-import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
 
 
 @Component({
@@ -11,7 +10,6 @@ import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
 })
 export class HomeComponent implements OnInit {
   
-  titolopagina: string = 'home';
   accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
 
   esci() {

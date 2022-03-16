@@ -1,8 +1,8 @@
-export interface Utente_tipo {
+export interface Utente {
     id: string;
     email: string;
     password: string;
-    ricordami: boolean;
+    ricordami?: boolean;
 }
 
 //Se è un numero, ? dopo il nome della variabile

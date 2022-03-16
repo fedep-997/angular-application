@@ -17,7 +17,7 @@ import { AccediComponent } from './accedi/accedi.component';
 import { PostComponent } from './post/post.component';
 import { NuovopostComponent } from './nuovopost/nuovopost.component';
 import { ProfiloComponent } from './profilo/profilo.component';
-import { NonTrovatoComponent } from './non-trovato/non-trovato.component';
+import { NonTrovatoComponent } from './404/non-trovato.component';
 
 import { GuardiaGuard } from './guardia.guard';
 import { FeedComponent } from './SharedComponents/feed/feed.component';

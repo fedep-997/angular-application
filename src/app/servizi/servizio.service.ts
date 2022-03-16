@@ -6,9 +6,9 @@ import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 
-import { Utente_tipo } from '../interfacce/struttura_utente/Utente';
-import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
-import { Commento } from '../interfacce/interfacciacommento/un_commento';
+import { Utente } from '../interfacce/utente/Utente';
+import { Post } from '../interfacce/post/Post';
+import { Commento } from '../interfacce/commento/Commento';
 
 
 @Injectable({
@@ -44,23 +44,23 @@ export class ServizioService {
 
   // metodi HTTP
   // get
-  get_utenti(): Observable<Utente_tipo[]> {
-    return this.clienteHTTP.get<Utente_tipo[]>(this.dati + '/utenti')
+  get_utenti(): Observable<Utente[]> {
+    return this.clienteHTTP.get<Utente[]>(this.dati + '/utenti')
   }
-  leggi_post(): Observable<Un_post_tipo[]> {
-    return this.clienteHTTP.get<Un_post_tipo[]>(this.dati + '/pubblicazioni')
+  leggi_post(): Observable<Post[]> {
+    return this.clienteHTTP.get<Post[]>(this.dati + '/pubblicazioni')
   }
-  un_solo_post(numero: number): Observable<Un_post_tipo> {
-    return this.clienteHTTP.get<Un_post_tipo>(this.dati + `/pubblicazioni/${numero}`)
+  un_solo_post(numero: number): Observable<Post> {
+    return this.clienteHTTP.get<Post>(this.dati + `/pubblicazioni/${numero}`)
   }
   get_commenti(): Observable<Commento[]> {
     return this.clienteHTTP.get<Commento[]>(this.dati + '/commenti')
     
   }
   // post
-  postaUnPost(b: string, c: string, d: string): Observable<Un_post_tipo> {
+  postaUnPost(b: string, c: string, d: string): Observable<Post> {
     const testa = { 'content-type': 'application/json' }
-    return this.clienteHTTP.post<Un_post_tipo>(this.dati + '/pubblicazioni', { "user": b, "titolo": c, "testo": d }, { 'headers': testa })
+    return this.clienteHTTP.post<Post>(this.dati + '/pubblicazioni', { "user": b, "titolo": c, "testo": d }, { 'headers': testa })
     .pipe(retry(2), catchError(this.handleError))
   }
   commentaUnCommento(k: number, h: string, j: string): Observable<Commento> {
@@ -68,9 +68,9 @@ export class ServizioService {
     return this.clienteHTTP.post<Commento>(this.dati + '/commenti', { "post": k, "m_a": h, "testo": j }, { 'headers': testa })
     .pipe(retry(2), catchError(this.handleError))
   }
-  registraUnUtente(e: string, f: string, g: string): Observable<Utente_tipo> {
+  registraUnUtente(e: string, f: string, g: string): Observable<Post> {
     const testa = { 'content-type': 'application/json' }
-    return this.clienteHTTP.post<Utente_tipo>(this.dati + '/utenti', { "id": e, "email": f, "password": g }, { 'headers': testa })
+    return this.clienteHTTP.post<Post>(this.dati + '/utenti', { "id": e, "email": f, "password": g }, { 'headers': testa })
     .pipe(retry(2), catchError(this.handleError))
   }
 

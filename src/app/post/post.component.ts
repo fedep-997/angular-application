@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ServizioService } from '../servizi/servizio.service';
-import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
+import { Post } from '../interfacce/post/Post';
 
 @Component({
   selector: 'app-post',
@@ -22,7 +22,7 @@ export class PostComponent implements OnInit {
   mail = sessionStorage.getItem('mail') || localStorage.getItem('utente') || '';
 
   @Input() numeropost!: number;
-  ilpost = <Un_post_tipo>{};
+  ilpost = <Post>{};
   commenti: any;
   ngOnInit(): void {
     this.rotta.params.subscribe((params) => {

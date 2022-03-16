@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Un_post_tipo } from '../interfacce/interfacciapost/Unpostfattocome';
+import { Post } from '../interfacce/post/Post';
 import { ServizioService } from '../servizi/servizio.service';
 import { Router } from '@angular/router';
 
@@ -12,10 +12,9 @@ import { Router } from '@angular/router';
 
 export class NuovopostComponent implements OnInit {
 
-  titolopagina: string = "nuovo post";
   accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
 
-  pubblicazioni: Un_post_tipo[] = [];
+  pubblicazioni: Post[] = [];
   acc = sessionStorage.getItem('utente') || localStorage.getItem('utente') || '';
 
   constructor(private servizi: ServizioService,

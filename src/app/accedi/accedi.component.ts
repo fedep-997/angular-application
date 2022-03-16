@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServizioService } from '../servizi/servizio.service';
-import { Utente_tipo } from '../interfacce/struttura_utente/Utente';
+import { Utente } from '../interfacce/utente/Utente';
 
 @Component({
   selector: 'app-accedi',
@@ -9,11 +9,10 @@ import { Utente_tipo } from '../interfacce/struttura_utente/Utente';
   styleUrls: ['./accedi.component.css'],
 })
 export class AccediComponent implements OnInit {
-  titolopagina: string = "PICCOLO SOCIAL NETWORK";
   
   accesso: string = ''
   mail: string = ''
-  utenti: Utente_tipo[] = [];
+  utenti: Utente[] = [];
   
   vabene: boolean = false;
 

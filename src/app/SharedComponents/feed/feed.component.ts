@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServizioService } from '../../servizi/servizio.service';
-import { Un_post_tipo } from '../../interfacce/interfacciapost/Unpostfattocome';
+import { Post } from '../../interfacce/post/Post';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class FeedComponent implements OnInit {
   page: number = 1;
   pageSize: number = 10;
 
-  pubblicazioni: Un_post_tipo[] = [];
+  pubblicazioni: Post[] = [];
 
   constructor(private servizi: ServizioService) {}
 

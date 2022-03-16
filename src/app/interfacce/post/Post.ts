@@ -1,4 +1,4 @@
-export interface Un_post_tipo {
+export interface Post {
     user: string;
     titolo: string;
     testo: string;

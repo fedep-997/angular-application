@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServizioService } from '../servizi/servizio.service';
-import { Utente_tipo } from '../interfacce/struttura_utente/Utente';
+import { Utente } from '../interfacce/utente/Utente';
 
 @Component({
   selector: 'app-registrazione',
@@ -9,17 +9,9 @@ import { Utente_tipo } from '../interfacce/struttura_utente/Utente';
   styleUrls: ['./registrazione.component.css'],
 })
 export class RegistrazioneComponent implements OnInit {
-  titolopagina: string = 'BENVENUTO';
 
-  utenti: Utente_tipo[] = [];
+  utenti: Utente[] = [];
 
-  constructor(private servizi: ServizioService) {}
-
-  ngOnInit(): void {
-    this.servizi.get_utenti().subscribe((c) => (this.utenti = c));
-  }
-
-  // Validazione form (?)
   validazione(a: NgForm) {
     var ut = a.form.value;
     var b = this.utenti;
@@ -40,4 +32,11 @@ export class RegistrazioneComponent implements OnInit {
       console.log('Non va bene');
     }
   }
+  
+  constructor(private servizi: ServizioService) {}
+  ngOnInit(): void {
+    this.servizi.get_utenti().subscribe((c) => (this.utenti = c));
+  }
+  
+  // Validazione form (?)
 }
