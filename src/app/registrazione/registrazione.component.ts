@@ -14,18 +14,17 @@ export class RegistrazioneComponent implements OnInit {
 
   validazione(a: NgForm) {
     var ut = a.form.value;
-    var b = this.utenti;
     var uguali = false;
 
-    for (var i = 0; i < b.length; i++) {
-      if (b[i].id == ut.username || b[i].email == ut.email) {
+    for (var i of this.utenti) {
+      if (i.id == ut.username || i.email == ut.email) {
         uguali = true;
       }
     }
     // non è stato trovato un utente con credenziali uguali
     if (!uguali) {
       this.servizi
-        .registraUnUtente(ut.username, ut.email, ut.password)
+        .registrareUtente(ut.username, ut.email, ut.password)
         .subscribe(() => {});
         a.form.reset()
     } else {

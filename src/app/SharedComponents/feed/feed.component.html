@@ -1,5 +1,5 @@
 <!--Feed-->
-<div *ngFor="let pb of pubblicazioni.slice().reverse(); let indice = index" [attr.data-index]="indice">
+<div *ngFor="let pb of feed; let indice = index" [attr.data-index]="indice">
     <div id="riga_post">
         <div>
             <div class="titoletto" [routerLink]="['/post', pb.id]">
@@ -13,5 +13,5 @@
 </div>
 
 <!--Paginazione feed-->
-<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="pubblicazioni.length">
+<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="feed.length">
 </ngb-pagination>

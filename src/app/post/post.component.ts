@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ServizioService } from '../servizi/servizio.service';
 import { Post } from '../interfacce/post/Post';
+import { Commento } from '../interfacce/commento/Commento';
 
 @Component({
   selector: 'app-post',
@@ -10,39 +11,44 @@ import { Post } from '../interfacce/post/Post';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  constructor(
-    private servizi: ServizioService,
-    private rotta: ActivatedRoute
-  ) {}
-
   page = 1;
   pageSize = 10;
-  
-  accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
+
+  loggato = sessionStorage.getItem('utente') || localStorage.getItem('utente');
   mail = sessionStorage.getItem('mail') || localStorage.getItem('utente') || '';
 
-  @Input() numeropost!: number;
   ilpost = <Post>{};
-  commenti: any;
-  ngOnInit(): void {
-    this.rotta.params.subscribe((params) => {
-      this.numeropost = params.id;
-    });
-    this.servizi
-      .un_solo_post(this.numeropost)
-      .subscribe((c) => (this.ilpost = c));
-    this.servizi.get_commenti().subscribe((d) => (this.commenti = d));
-  }
+  commenti = <Commento[]>[];
+
+  @Input() numeropost!: number;
   commentare(a: NgForm): void {
     // fai un commento e rifetcha lista commenti aggiornata
     this.servizi
-      .commentaUnCommento(
+      .commentareCommento(
         Object.values(this.ilpost)[3],
         this.mail,
         a.form.value.txt_commento
       )
       .subscribe(() => {});
-    this.servizi.get_commenti().subscribe((d) => (this.commenti = d));
+    this.servizi
+      .get_commenti()
+      .subscribe((risposta) => (this.commenti = risposta));
     window.location.reload();
+  }
+
+  constructor(
+    private servizi: ServizioService,
+    private rotta: ActivatedRoute
+  ) {}
+  ngOnInit(): void {
+    this.rotta.params.subscribe((params) => {
+      this.numeropost = params.id;
+    });
+    this.servizi.leggi_post(this.numeropost).subscribe((risposta) => {
+      if (this.servizi.isUnico(risposta)) this.ilpost = risposta;
+    });
+    this.servizi
+      .get_commenti()
+      .subscribe((risposta) => (this.commenti = risposta));
   }
 }

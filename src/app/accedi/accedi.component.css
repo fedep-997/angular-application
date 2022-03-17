@@ -1,5 +1,7 @@
-span {display: block}
+span {display: block;}
 div {display: flex;}
 #formaccesso {margin: auto;}
+input, button {opacity: .75}
+button[disabled] {opacity: .4; border: 0;}
 input:active, input:focus {background: transparent;}
-.condizionale {margin-left: 2em;}
+.condizionale {margin-left: 2em; display: flex; flex-direction: column; justify-content: center;}

@@ -10,13 +10,12 @@ import { ServizioService } from '../servizi/servizio.service';
 })
 export class HomeComponent implements OnInit {
   
-  accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
+  loggato = (sessionStorage || localStorage).getItem('utente')
 
   esci() {
     // logica di logout
-    sessionStorage.clear();
-    localStorage.clear();
-    this.servizi.impostaGuardia(false);
+    (sessionStorage && localStorage).clear();
+    this.servizi.impostareGuardia(false);
     this.rotta.navigateByUrl('/accedi');
   }
 

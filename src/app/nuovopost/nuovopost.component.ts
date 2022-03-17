@@ -7,24 +7,21 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nuovopost',
   templateUrl: './nuovopost.component.html',
-  styleUrls: ['./nuovopost.component.css']
+  styleUrls: ['./nuovopost.component.css'],
 })
-
 export class NuovopostComponent implements OnInit {
-
   accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
 
   pubblicazioni: Post[] = [];
-  acc = sessionStorage.getItem('utente') || localStorage.getItem('utente') || '';
-
-  constructor(private servizi: ServizioService,
-              private rotta: Router) {}
-
-  ngOnInit(): void {}
-
+  acc =
+    sessionStorage.getItem('utente') || localStorage.getItem('utente') || '';
   pubblicazione(b: NgForm): void {
-    this.servizi.postaUnPost(this.acc, b.form.value.titolopost, b.form.value.testo).subscribe(data => {})
-    this.servizi.leggi_post().subscribe(a => (this.pubblicazioni = a))
-    this.rotta.navigateByUrl('/home')
+    this.servizi
+      .postarePost(this.acc, b.form.value.titolopost, b.form.value.testo)
+      .subscribe(() => {});
+    this.rotta.navigateByUrl('/home');
   }
+
+  constructor(private servizi: ServizioService, private rotta: Router) {}
+  ngOnInit(): void {}
 }

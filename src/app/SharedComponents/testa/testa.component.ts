@@ -9,14 +9,14 @@ export class TestaComponent implements OnInit {
   constructor() {}
 
   accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
-  nome: string = ''
+  nome: string = '';
 
   @Input()
   header: string = '';
 
-  ngOnInit(): void { 
-    if(typeof(this.accesso)=='string') {
-      this.nome = this.accesso
+  ngOnInit(): void {
+    if (typeof this.accesso == 'string') {
+      this.nome = this.accesso;
     }
   }
 }

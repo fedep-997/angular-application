@@ -9,41 +9,37 @@ import { Utente } from '../interfacce/utente/Utente';
   styleUrls: ['./accedi.component.css'],
 })
 export class AccediComponent implements OnInit {
-  
-  accesso: string = ''
-  mail: string = ''
+  accesso: object = {
+    username: '',
+    mail: '',
+  };
+
   utenti: Utente[] = [];
-  
-  vabene: boolean = false;
-
-  constructor(private servizi: ServizioService) { }
-
-  ngOnInit(): void {
-    this.servizi.get_utenti().subscribe(c => (this.utenti = c));
-  }
+  vaBene: boolean = false;
 
   accedi(a: NgForm): void {
-    var acc = a.form.value
-    var i = 0;
-
-    //logica di accesso
-    this.vabene = false;
-    for (i = 0; i < this.utenti.length; i++) {
-      if ((acc.username == this.utenti[i].id) && (acc.password == this.utenti[i].password)) {
-        this.accesso = this.utenti[i].id;
-        this.mail = this.utenti[i].email;
-        this.vabene = true;
+    var creds = a.form.value;
+    this.servizi.get_utenti().subscribe((c) => (this.utenti = c));
+    this.vaBene = false;
+    for (var utenteRegistrato of this.utenti) {
+      if (
+        creds.username == utenteRegistrato.id &&
+        creds.password == utenteRegistrato.password
+      ) {
+        this.accesso = (({ id, email }) => ({ username: id, mail: email }))(
+          utenteRegistrato
+        );
+        this.vaBene = true;
+        this.servizi.impostareGuardia(true);
+        this.servizi.eseguireAccesso(
+          Object.values(this.accesso)[0],
+          Object.values(this.accesso)[1],
+          creds.check
+        );
       }
     }
-    if (this.vabene) {
-      this.servizi.impostaGuardia(true)
-      // in base al valore di "Ricorda Questo Accesso", i dati sono memorizzati in localStorage o in sessionStorage
-      if (acc.check) {
-        this.servizi.accessoRicorda(this.accesso, this.mail, '/home')
-      } else {
-        this.servizi.accessoDimentica(this.accesso, this.mail, '/home')
-      }
-    } 
   }
 
+  constructor(private servizi: ServizioService) {}
+  ngOnInit(): void {}
 }
