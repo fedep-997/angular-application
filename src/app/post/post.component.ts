@@ -14,8 +14,8 @@ export class PostComponent implements OnInit {
   page = 1;
   pageSize = 10;
 
-  loggato = sessionStorage.getItem('utente') || localStorage.getItem('utente');
-  mail = sessionStorage.getItem('mail') || localStorage.getItem('utente') || '';
+  loggato = (sessionStorage  || localStorage).getItem('utente');
+  mail = (sessionStorage || localStorage).getItem('utente') || '';
 
   ilpost = <Post>{};
   commenti = <Commento[]>[];

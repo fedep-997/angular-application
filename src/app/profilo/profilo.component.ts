@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profilo',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfiloComponent implements OnInit {
   
-  accesso = sessionStorage.getItem('utente') || localStorage.getItem('utente');
+  profilo: string = this.rotta.url.slice(9)
+  accesso = (sessionStorage || localStorage).getItem('utente');
   
-  constructor() {}
+  constructor(private rotta: Router) {}
   ngOnInit(): void {}
 }

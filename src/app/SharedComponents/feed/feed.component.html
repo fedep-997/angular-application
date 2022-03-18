@@ -4,7 +4,7 @@
         <div>
             <div class="titoletto" [routerLink]="['/post', pb.id]">
                 <span class="t-tit">{{pb.titolo}}</span>
-                <span class="t-aut">{{pb.user}}</span>
+                <span class="t-aut" [routerLink]="['/profilo', pb.user]">{{pb.user}}</span>
             </div>
             <br>
             <span>{{pb.testo}}</span>

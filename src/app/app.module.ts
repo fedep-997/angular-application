@@ -47,7 +47,7 @@ import { FeedComponent } from './SharedComponents/feed/feed.component';
       { path: 'accedi', 
         component: AccediComponent,
       },
-      { path: 'profilo',
+      { path: 'profilo/:id',
         component: ProfiloComponent,
       },
       { path: 'post/:id', 
