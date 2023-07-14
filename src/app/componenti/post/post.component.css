@@ -1,0 +1,60 @@
+
+#post p {
+  padding: 2em;
+  font-size: 3em;
+}
+#commentario {
+  font-size: 0.8em;
+  background: #0008;
+}
+#commento {
+  display: flex;
+  align-items: center;
+}
+#commento > div {
+  padding-left: 2em;
+}
+#testocommento {
+  font-size: 2em;
+  color: #fff;
+}
+
+#autorecommento {text-align: right; padding-right: 2em;}
+
+.like {
+  width: 100%;
+  flex: 1;
+  text-align: center;
+  font-size: 3em;
+  background: #000;
+}
+
+.like button {
+  width:100%;
+}
+
+input,
+button {
+  margin: 0;
+  background: #0008;
+}
+form {
+  margin: 0;
+  display: flex;
+}
+form input {
+  width: 100%;
+}
+
+#frm {
+  display: flex;
+  margin-top: 1em;
+}
+
+.vero {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+#coda {height: 10vw;}

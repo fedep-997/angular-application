@@ -1,0 +1,6 @@
+span {display: block;}
+#formaccesso {display: flex;}
+input, button {opacity: .75; height: 3em; margin: auto; background: transparent;}
+button[disabled] {opacity: .4; border: 0;}
+input:active, input:focus {background: transparent;}
+.condizionale {color: #f55;font-weight: bold; text-align: center; display: flex; flex-direction: column; justify-content: center;}

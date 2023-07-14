@@ -1,0 +1,66 @@
+p {
+  text-decoration: underline;
+  font-size: 1em;
+  margin: 0;
+}
+input,
+button {
+  opacity: 0.75;
+}
+button[disabled] {
+  opacity: 0.4;
+  border: 0;
+}
+input:active,
+input:focus {
+  background: transparent;
+}
+input[type="text"], input[type="password"] {
+  height: 2em;
+}
+.condizionale {
+  margin-left: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#piede {
+  display: block;
+}
+#piede span {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#piede span:last-child {
+  background-color: #fff;
+  color: #46a;
+}
+input[type="checkbox"] {
+  appearance: none;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  font: inherit;
+  color: currentColor;
+  width: 2em;
+  height: 2em;
+  border: 0.3em solid currentColor;
+  border-radius: 1em;
+  transform: translateY(-0.075em);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 1em;
+  transform: scale(0);
+  transition: 100ms transform none;
+  box-shadow: inset 1.6em 1.6em #fff;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}

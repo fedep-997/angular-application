@@ -1,0 +1,7 @@
+input, textarea {border-radius: 0;}
+#indietro {font-size: 3em; text-align: center;}
+.f-g {display: flex; flex-direction: column;}
+.f-g > input {text-align: center; background-color: #0009;}
+.f-g > input:first-of-type {height: 2em;}
+.f-g > input:last-of-type {height: 5em;}
+.f-g > button {width: fit-content;}

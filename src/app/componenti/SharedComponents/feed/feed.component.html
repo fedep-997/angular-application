@@ -1,0 +1,21 @@
+<!--Feed-->
+<div *ngFor="let p of out$|async; let indice = index" [attr.data-index]="indice">
+    <div id="riga_post">
+        <div id="txt">
+            <div class="titoletto" [routerLink]="['/post', p.id]">
+                <span class="t-tit">{{p.titolo}}</span>
+                <span class="cifre">🤍{{p.mipiace.length}}</span>
+                <span class="cifre">💬{{p.commenti.length}}</span>
+                <span class="t-aut" [routerLink]="['/profilo', p.user]">{{p.user}}</span>
+            </div>
+            <br>
+            <div id="testodelpost" [routerLink]="['/post', p.id]">{{p.testo}}</div>
+        </div>
+    </div>
+</div>
+
+
+<!--Paginazione feed-->
+<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize">
+</ngb-pagination>
+<div id="coda"></div>

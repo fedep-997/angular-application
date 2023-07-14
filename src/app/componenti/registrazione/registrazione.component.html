@@ -1,0 +1,16 @@
+<form #registrazione="ngForm" (ngSubmit)="validazione(registrazione)">
+    <input #usr="ngModel" required minlength="4" type="text" placeholder="come ti chiamerai?" name="username" ngModel>
+    <span *ngIf="usr.touched && usr.invalid" class="condizionale">Almeno 4 caratteri nel tuo nome
+        per favore!</span>
+
+    <input #mail="ngModel" type="email" placeholder="la tua mail" name="email" ngModel>
+
+    <input #name_1="ngModel" required minlength="4" type="text" placeholder="la password" name="password" ngModel>
+    <span *ngIf="name_1.touched && name_1.invalid" class="condizionale">Almeno 4 caratteri per la
+        password!</span>
+
+    <input #name_2="ngModel" required type="text" placeholder="ripeti la password" name="password_2" ngModel>
+    <span *ngIf="name_2.touched && (name_1.value != name_2.value)" class="condizioalel">Le password non
+        coincidono!</span>
+    <button type="submit">Registrati!</button>
+</form>

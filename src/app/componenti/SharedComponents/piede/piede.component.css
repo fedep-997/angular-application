@@ -1,0 +1,13 @@
+#piede {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  background: #000d;
+}
+
+#piede div {
+  text-align: center;
+  font-size: 3em;
+  padding: .5em;
+}

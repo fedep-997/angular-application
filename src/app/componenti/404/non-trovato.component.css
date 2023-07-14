@@ -1,0 +1,15 @@
+
+  
+.main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.main div {
+    text-align: center;
+    font-size: 10em;
+  }
+
+  a:hover {color:#fff}

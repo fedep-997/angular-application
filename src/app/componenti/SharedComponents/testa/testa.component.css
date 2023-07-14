@@ -1,0 +1,28 @@
+#testa {
+  position: sticky;
+  top: 0;
+  font-family: 'Franklin Gothic Medium'!important;
+  font-size: 10vw;
+  display: flex;
+  padding: 0.2em;
+  justify-content: center;
+  align-items: center;
+  background: #000a;
+  height: 1.5em;
+}
+#testa p {
+  text-align: center;
+  flex: 4;
+}
+#testa div {
+  flex: 1;
+}
+
+#testa {
+  background: linear-gradient(
+    90deg,
+    rgba(85, 98, 108, 1) 0%,
+    rgba(33, 18, 81, 1) 40%,
+    rgba(2, 0, 36, 1) 99%
+  );
+}

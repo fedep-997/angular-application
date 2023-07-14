@@ -1,0 +1,9 @@
+<div class="w">
+    <form #pubblica="ngForm" (ngSubmit)="pubblicazione(pubblica)">
+        <div class="f-g">
+            <input name="titolopost" #titolopost="ngModel" type="text" placeholder="titolo" ngModel>
+            <input name="testo" #testo="ngModel" type="text" placeholder="post" ngModel>
+            <button type="submit">Pubblica</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<form #credenziali="ngForm" (ngSubmit)="accedi(credenziali)">
+    <div>
+        <div>
+            <input autocomplete="off" name="username" #username="ngModel" required type="text" placeholder="chi sei?" ngModel>
+            <!--<span class="condizionale" *ngIf="username.touched && username.errors?.required">Inserisci il nome
+                utente!</span>-->
+        </div>
+        <div>
+            <input name="password" #password="ngModel" required type="password" placeholder="***" ngModel>
+            <!--<span class="condizionale" *ngIf="password.touched && password.errors?.required">Inserisci la
+                password!</span>-->
+        </div>
+    </div>
+    <div id="piede">
+        <span>
+            <button [disabled]="username.errors || password.errors" type="submit">Accedi</button>
+            Ricorda questo accesso <input name="ricorda" #check="ngModel" type="checkbox" ngModel></span>
+        <br>
+        <span>Non sei iscritto?<p routerLink="/registrazione">Registrati!</p></span>
+    </div>
+</form>

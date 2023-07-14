@@ -1,0 +1,49 @@
+html {
+  background: rgb(120, 59, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(120, 59, 59, 1) 0%,
+    rgba(18, 84, 118, 1) 85%
+  );
+  height: 100%;
+}
+
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: block;
+}
+
+div,
+a {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  color: #fff;
+  font-size: 1.5vw;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+button {
+  font-size: 4vw;
+  display: block;
+  background-color: #222;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 3px solid #fff;
+  margin: 3vw;
+}
+
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+
+form > div {
+  display: flex;
+  margin-top: 2em;
+}

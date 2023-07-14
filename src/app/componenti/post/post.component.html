@@ -1,0 +1,21 @@
+<div *ngIf="out$|async as r" id="post">
+    <p >{{r?.testo}}</p>
+    <span>Commenti</span>
+    <div id="commentario">
+        <div *ngFor="let comm of r?.commenti">
+            <div id="commento">
+                <div id="testocommento">{{comm.tc}}</div>
+                <div id="autorecommento"><a [routerLink]="['/profilo', comm.ac]">{{comm.ac}}</a></div>
+            </div>
+        </div>
+        <!--<ngb-pagination class="pg" [(page)]="page" [pageSize]="pageSize" [collectionSize]="commenti.length"></ngb-pagination>-->
+    </div>
+    <div id="frm">
+        <div class="like">{{r?.mipiace}}<button [class.vero]="r?.mipiace" (click)="mipiace()">♡</button></div>
+        <form #commento="ngForm" (ngSubmit)="comm(commento)">
+            <input ngModel #txt_commento="ngModel" name="txt_commento" type="text" required>
+            <button type="submit">Commenta</button>
+        </form>
+    </div>
+    <div id="coda"></div>
+</div>

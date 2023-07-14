@@ -1,0 +1,137 @@
+{
+  "utenti": [
+    {
+      "id": "Carlo",
+      "email": "carl@abc.def",
+      "password": "Password1",
+      "ricordami": "no"
+    },
+    {
+      "id": "Arianna",
+      "email": "ari@abc.def",
+      "password": "Password2",
+      "ricordami": "no"
+    },
+    {
+      "id": "Mario",
+      "email": "mario.com",
+      "password": "Mario",
+      "ricordami": "no"
+    },
+    {
+      "id": "fedep",
+      "email": "fedep@fedep.p",
+      "password": "fedep",
+      "ricordami": "no"
+    },
+    {
+      "id": "eB7O8ft",
+      "email": "",
+      "password": ""
+    }
+  ],
+  "pubblicazioni": [
+    {
+      "user": "Carlo",
+      "titolo": "Post uno",
+      "mipiace": [
+        "fedep",
+        "Mario",
+        "Arianna"
+      ],
+      "testo": "as been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like",
+      "id": 1,
+      "commenti": [
+        {
+          "tc": "fedep",
+          "ac": "fedep"
+        },
+        {
+          "tc": "Marco",
+          "ac": "Arianna"
+        }
+      ]
+    },
+    {
+      "user": "Carlo",
+      "titolo": "Post due",
+      "mipiace": [
+        "fedep",
+        "Mario"
+      ],
+      "testo": "m Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model te",
+      "id": 2,
+      "commenti": []
+    },
+    {
+      "user": "Carlo",
+      "titolo": "Post tre",
+      "mipiace": [
+        "Carlo",
+        "fedep"
+      ],
+      "testo": "andard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from  by Cicero are also reproduced in their exact original form, accompanied by English versions fro",
+      "id": 3,
+      "commenti": []
+    },
+    {
+      "user": "Arianna",
+      "titolo": "Post quattro",
+      "mipiace": [
+        "fedep",
+        "Mario",
+        "Arianna"
+      ],
+      "testo": "wn printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum",
+      "id": 4,
+      "commenti": [
+        {
+          "tc": "Leskereeee",
+          "ac": "Mario"
+        },
+        {
+          "tc": "LASGORAAA",
+          "ac": "Mario"
+        },
+        {
+          "tc": "Commentolo",
+          "ac": "Arianna"
+        }
+      ]
+    },
+    {
+      "user": "Mario",
+      "titolo": "Post cinco",
+      "mipiace": [
+        "fedep",
+        "Mario"
+      ],
+      "testo": " electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letras",
+      "id": 16,
+      "commenti": [
+        {
+          "tc": "Mannaggia",
+          "ac": "Carlo"
+        },
+        {
+          "tc": "Cristo!",
+          "ac": "Carlo"
+        },
+        {
+          "tc": "Commento Std",
+          "ac": "Arianna"
+        }
+      ]
+    },
+    {
+      "user": "Mario",
+      "titolo": "Post Sextu",
+      "mipiace": [
+        "Mario"
+      ],
+      "testo": "Sextou",
+      "commenti": [],
+      "id": 17
+    }
+  ]
+}
